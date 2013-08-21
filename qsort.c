@@ -1,4 +1,6 @@
 #include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
 void Swap(int* a, int* b)
 {
 	int tmp=*a;
@@ -43,7 +45,8 @@ void print(int* arr, int n)
 }
 int main()
 {
-	int arr[]={-1,6,3,1,4,2,5,10};
+	srand(time(NULL));
+	int arr[]={rand(),rand(),rand(),rand(),rand(),rand(),rand(),rand()};
 	Qsort(arr,sizeof(arr)/sizeof(int));
 	print(arr,sizeof(arr)/sizeof(int));
 	return 0;
