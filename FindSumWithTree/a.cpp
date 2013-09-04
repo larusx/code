@@ -21,10 +21,9 @@ void FindPath(node* root, int sum, Stack& sk)
 int main()
 {
 	node* ptree = CreateTree(4);
-	InsertTree(2,ptree);
-	InsertTree(5,ptree);
-	InsertTree(3,ptree);
-	InsertTree(1,ptree);
+	int a[]={2,5,1,3};
+	for(int i=0;i<sizeof(a)/sizeof(int);i++)
+		InsertTree(a[i],ptree);
 	//printMid(ptree);
 	Stack sk;
 	FindPath(ptree,9,sk);
