@@ -1,5 +1,6 @@
 #include<iostream>
 #include<stdlib.h>
+#include<list>
 using namespace std;
 typedef struct node{
 	int data;
