@@ -20,14 +20,15 @@ int main()
 	remote_addr.sin_port=htons(8888);
 	inet_pton(AF_INET,"127.0.0.1",&remote_addr.sin_addr);
 	connect(sockfd,(struct sockaddr*)&remote_addr,addr_len);
-	getpeername(sockfd,&accept_addr,&accept_addr_len);
+	perror("connect");
+	getsockname(sockfd,&accept_addr,&accept_addr_len);
 	inet_ntop(AF_INET,&accept_addr.sin_addr,accept_ip,20);
-	printf("%s : %d",accept_ip,ntohs(accept_addr.sin_port));
+	printf("%s : %d\n",accept_ip,ntohs(accept_addr.sin_port));
 	read(sockfd,buf,100);
-	printf("%s",buf);
+	printf("%s\n",buf);
 	getpeername(sockfd,&accept_addr,&accept_addr_len);
 	inet_ntop(AF_INET,&accept_addr.sin_addr,accept_ip,20);
-	printf("%s : %d",accept_ip,ntohs(accept_addr.sin_port));
+	printf("%s : %d\n",accept_ip,ntohs(accept_addr.sin_port));
 	while(1);
 	return 0;
 }
